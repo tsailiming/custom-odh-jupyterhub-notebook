@@ -1,0 +1,22 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: custom-data-science-notebook
+  namespace: odh
+spec:
+  failedBuildsHistoryLimit: 5
+  output:
+    to:
+      kind: ImageStreamTag
+      name: custom-data-science-notebook:latest
+  runPolicy: Serial
+  source:
+    contextDir: docker
+    git:
+      ref: main
+      uri: https://github.com/tsailiming/custom-odh-jupyterhub-notebook
+    type: Git
+  strategy:
+    dockerStrategy: {}
+    type: Docker
+  successfulBuildsHistoryLimit: 5
