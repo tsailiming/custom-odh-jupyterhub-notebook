@@ -20,7 +20,6 @@ $ oc create -f yaml/custom-data-science-notebook-imagestream.yaml -n odh
 
 And trigger a new build. This will build a new image from the git repository.
 
-
 ## Customization
 
 To customize the image, fork this repository and update the  `.spec.source.git` in the `BuildConfig` to build from the new repository.

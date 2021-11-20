@@ -5,7 +5,7 @@ USER 0
 RUN yum clean all
 RUN dnf install -y libglvnd-glx \
         && dnf clean all \
-  	  && rm -rf /var/cache/yum
+        && rm -rf /var/cache/yum
 ADD src/requirements.txt /tmp/src/
 
 USER 1001
