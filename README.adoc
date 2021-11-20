@@ -10,12 +10,12 @@ The notebook is based on the Standard Data Science image from https://github.com
 
 ## Installation Steps
 
-Create the `BuildConfig` and `ImageStream` resources
+Create the `BuildConfig` and `ImageStream` resources into the same namespace that JupyterHub is running.
 
 [source, bash]
 ----
-$ oc create -f yaml/custom-data-science-notebook-buildconfig.yaml
-$ oc create -f yaml/custom-data-science-notebook-imagestream.yaml
+$ oc create -f yaml/custom-data-science-notebook-buildconfig.yaml -n odh
+$ oc create -f yaml/custom-data-science-notebook-imagestream.yaml -n odh
 ----
 
 And trigger a new build. This will build a new image from the git repository.
