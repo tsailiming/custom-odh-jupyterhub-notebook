@@ -1,5 +1,7 @@
 FROM quay.io/thoth-station/s2i-generic-data-science-notebook:v0.0.5
 
+MAINTAINER Tsai Li Ming <tsai.liming@gmail.com>
+
 USER 0
 
 RUN yum clean all
